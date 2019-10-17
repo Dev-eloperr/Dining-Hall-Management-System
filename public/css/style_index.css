@@ -1,0 +1,12 @@
+body {
+    background: url(../images/Home.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    width: 100%;
+    overflow-x: hidden;
+}
+html{
+    width: 100%;
+}
