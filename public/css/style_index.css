@@ -10,3 +10,46 @@ body {
 html{
     width: 100%;
 }
+
+#login-wrapper{
+    text-align: center;
+    margin-top: 100px;
+}
+
+#login{
+    border-radius: 40px;
+    background: white;
+    padding: 60px;
+    width: 600px;
+    height: 400px;
+
+    display: inline-block;
+}
+.green-text{
+    color: rgba(16,140,36,0.64);
+    font-size: 2rem;
+    position: relative;
+}
+.green-font{
+    color: rgba(16,140,36,0.64);
+    font-weight: bold;
+}
+::placeholder{
+    color: rgba(16,140,36,0.64); !important;
+}
+
+.input-form-control{
+    display: block;
+    width: 100%;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid rgba(16,140,36,0.64);
+    border-radius: .25rem;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
