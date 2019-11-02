@@ -62,7 +62,6 @@ $(document).ready(function() {
                 $('.nav-link').removeClass('disabled');
             }
             else {
-                window.location.replace('./index.html');
                 $('.nav-link').removeClass('disabled');
                 $('#adminbtn').addClass('disabled');
             }
