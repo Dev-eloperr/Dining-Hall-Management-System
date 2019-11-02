@@ -3,8 +3,6 @@ $(document).ready(function() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
-            alert("Logged in successfully");
-            //$('#login-wrapper').innerHTML('Logged in as'+user.email);
             if (user.email === 'admin@dhms.com') {
                 $('.nav-link').removeClass('disabled');
             } else {

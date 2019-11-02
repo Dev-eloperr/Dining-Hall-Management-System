@@ -55,8 +55,9 @@ $(document).ready(function() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
-            alert("Logged in successfully");
-            //$('#login-wrapper').innerHTML('Logged in as'+user.email);
+            $('#replace-login').addClass('d-none');
+            $('#replace').removeClass("d-none");
+            $('#user-email').html(user.email);
             if (user.email === 'admin@dhms.com'){
                 $('.nav-link').removeClass('disabled');
             }
@@ -66,6 +67,8 @@ $(document).ready(function() {
                 $('#adminbtn').addClass('disabled');
             }
         } else {
+            $('#replace-login').removeClass('d-none');
+            $('#replace').addClass("d-none");
             disableAll();
         }
     });
