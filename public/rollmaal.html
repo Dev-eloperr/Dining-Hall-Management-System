@@ -28,14 +28,14 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="index.html">DHMS</a>
+            <a class="navbar-brand" href="../index.html">DHMS</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">RollMaal</a>
+                        <a class="nav-link" href="rollmaal.html">RollMaal</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="bakery.html">Bakery</a>
@@ -44,7 +44,7 @@
                         <a class="nav-link" href="alacarte.html">Ala-Carte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="admin.html">Admin</a>
+                        <a class="nav-link" id="adminbtn" href="admin.html">Admin</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="signout">Sign out</a>
@@ -56,6 +56,33 @@
 </header>
 
 
+<main class="container">
+    <div class="row">
+        <div class="col sec">
+            <div class="scroll">
+                <table class="table table-striped table-dark">
+                    <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">OrderId</th>
+                    </tr>
+                    </thead>
+                    <tbody id="orders-wrapper">
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col sec">
+            <div class="scroll">
+
+            </div>
+        </div>
+    </div>
+</main>
+
 <!-- Optional JavaScript -->
 <!-- jQuery first, then Popper.js, then Bootstrap JS -->
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
@@ -66,9 +93,7 @@
 
 <script src="Scripts/app.js"></script>
 <script src="Scripts/main.js"></script>
-<script src="Scripts/setmenu.js"></script>
-<script src="Scripts/login.js"></script>
-
+<script src="Scripts/fetch_orders.js"></script>
 
 </body>
 </html>

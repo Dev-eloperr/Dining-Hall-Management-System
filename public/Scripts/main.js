@@ -3,10 +3,11 @@ $(document).ready(function() {
     firebase.auth().onAuthStateChanged(function (user) {
         if (user) {
             // User is signed in.
-            if (user.email === 'admin@dhms.com') {
+            if (user.email === 'admin@dhms.com'){
                 $('.nav-link').removeClass('disabled');
-            } else {
-
+            }
+            else {
+                console.log(user.email);
                 $('.nav-link').removeClass('disabled');
                 $('#adminbtn').addClass('disabled');
             }
