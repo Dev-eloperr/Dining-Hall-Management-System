@@ -6,6 +6,7 @@ body {
     background-size: cover;
     width: 100%;
     overflow-x: hidden;
+    overflow-y: hidden;
 }
 html{
     width: 100%;
@@ -13,18 +14,9 @@ html{
 
 #login-wrapper{
     text-align: center;
-    margin-top: 100px;
+    margin-top: 5em;
 }
 
-#login{
-    border-radius: 40px;
-    background: white;
-    padding: 60px;
-    width: 600px;
-    height: 400px;
-
-    display: inline-block;
-}
 .green-text{
     color: rgba(16,140,36,0.64);
     font-size: 2rem;
@@ -57,3 +49,60 @@ html{
     font-size: 1.1em;
     margin-top: 40px;
 }
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .input-form-control {
+        display: block;
+        width: 100%;
+        height: calc(1.5em + .75rem + 2px);
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+        color: #495057;
+        background-color: #fff;
+        background-clip: padding-box;
+        border: 1px solid rgba(16, 140, 36, 0.64);
+        border-radius: .25rem;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+    }
+
+    #login{
+        background: white;
+        padding: 2em;
+        width: 100vw;
+        height: 50vh;
+
+        display: inline-block;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    #login{
+        background: white;
+        padding: 2em;
+        width: 100vw;
+        height: 50vh;
+        display: inline-block;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    #login{
+        border-radius: 40px;
+        background: white;
+        padding: 60px;
+        width: 600px;
+        height: 400px;
+
+        display: inline-block;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

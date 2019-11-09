@@ -1,6 +1,13 @@
 
 $(document).ready(function() {
+/*
+    $("#myModal").find('#spllunch').on('hidden', function (e) {
+        //e.preventDefault();
+        e.stopPropagation();
+        console.log('blocked propagation!');
+    });
 
+ */
 
 
     console.log("set menu script running");
@@ -15,16 +22,15 @@ $(document).ready(function() {
     if (form1) {
         let flag=0;
         form1.addEventListener('submit', function (e) {
-            alert("submit pressed");
             e.preventDefault();
 
             //Breakfast
 
-            db.collection('Menu').doc('Breakfast').collection('Buffet').doc('Items').update({
+            db.collection('Menu').doc('Breakfast').collection('Buffet').doc('Item').update({
                 description: form1.bb.value,
-                //isVeg: "true",
-                price: 30,
-                name: "buffet",
+                isVeg: true,
+                price: "30",
+                //name: "buffet",
 
             })
                 .then(function() {
@@ -42,9 +48,9 @@ $(document).ready(function() {
 
             db.collection('Menu').doc('Lunch').collection('Buffet').doc('Veg').update({
                 description: form1.lbv.value,
-                isVeg: "true",
-                price: 50,
-                name:"Buffet"
+                isVeg: true,
+                price: "50",
+                //name:"Buffet"
 
             })
                 .then(function() {
@@ -62,9 +68,9 @@ $(document).ready(function() {
 
             db.collection('Menu').doc('Lunch').collection('Buffet').doc('Non Veg').update({
                 description: form1.lbnv.value,
-                isVeg: "false",
-                price: 80,
-                name: "",
+                isVeg: false,
+                price: "80",
+                //name: "",
 
             })
                 .then(function() {
@@ -77,14 +83,35 @@ $(document).ready(function() {
 
             form1.lbnv.value = '';
 
+
+            //Lunch special
+
+
+            db.collection('Menu').doc('Lunch').collection('Buffet').doc('Special').update({
+                description: form1.lbsdesc.value,
+                isVeg: form1.lbsveg.checked,
+                price: form1.lbsprice.value,
+                name: form1.lbsname.value,
+
+            })
+                .then(function() {
+                    console.log("Document successfully written!");
+                })
+                .catch(function() {
+                    flag=1;
+                });
+
+
+
+
             //Dinner veg
 
 
             db.collection('Menu').doc('Dinner').collection('Buffet').doc('Veg').update({
                 description: form1.dbv.value,
-                isVeg: "true",
-                price: 50,
-                name: "",
+                isVeg: true,
+                price: "50",
+                //name: "",
 
             })
                 .then(function() {
@@ -102,9 +129,9 @@ $(document).ready(function() {
 
             db.collection('Menu').doc('Dinner').collection('Buffet').doc('Non Veg').update({
                 description: form1.dbnv.value,
-                isVeg: "false",
-                price: 80,
-                name: "",
+                isVeg: false,
+                price: "80",
+                //name: "",
 
             })
                 .then(function() {
@@ -116,6 +143,26 @@ $(document).ready(function() {
 
 
             form1.dbnv.value = '';
+
+            //Dinner special
+
+
+            db.collection('Menu').doc('Dinner').collection('Buffet').doc('Special').update({
+                description: form1.dbsdesc.value,
+                isVeg: form1.dbsveg.checked,
+                price: form1.dbsprice.value,
+                name: form1.dbsname.value,
+
+            })
+                .then(function() {
+                    console.log("Document successfully written!");
+                })
+                .catch(function() {
+                    flag=1;
+                });
+
+
+
 
 
             if (flag===1)

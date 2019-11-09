@@ -6,11 +6,9 @@ $(document).ready(function() {
     let doc_name;
     console.log(window.location.toString());
     if ( window.location.toString().includes("alacarte") ) {
-        //Code here
         doc_name = 'Ala-Carte';
     }
     else if ( window.location.toString().includes("bakery") ) {
-        //Code here
         doc_name = 'Bakery';
     }else {
         doc_name = 'Roll Maal';
@@ -22,11 +20,27 @@ $(document).ready(function() {
 
         querySnapshot.docChanges().forEach(function(change) {
             orders.push(change.doc.data());
-            count=count+1;
-            document.getElementById('orders-wrapper').insertAdjacentHTML('beforeend','<tr><th>'+count+'</th>' +
-                '<th>'+change.doc.data().desc+'</th><th>'+change.doc.data().quantity+'</th><th>'+change.doc.data().orderId+'</th></tr>');
+
+            if(change.type === "added") {
+                document.getElementById('orders-wrapper').insertAdjacentHTML('beforeend', '<tr id="' + change.doc.data().desc + '' + change.doc.data().orderId + '">' +
+                    '<th class="count"></th>' +
+                    '<th>' + change.doc.data().desc + '</th><th>' + change.doc.data().quantity + '</th><th>' + change.doc.data().orderId + '</th></tr>');
+                count=count+1;
+            }else if (change.type === "removed") {
+                document.getElementById(change.doc.data().desc + '' + change.doc.data().orderId).remove();
+                count=count-1;
+            }
+            reset_count();
         });
         console.log(orders);
 
     });
+    function reset_count(){
+        let i=1;
+        document.querySelectorAll('.count').forEach(function(element) {
+            element.innerHTML=i;
+            i=i+1;
+        });
+        i=1;
+    }
 });

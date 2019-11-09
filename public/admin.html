@@ -74,8 +74,8 @@
 
 
     <!-- Modal -->
-    <div id="myModal" class="modal fade" role="dialog">
-        <div class="modal-dialog" role="document">
+    <div id="myModal" class=" modal fade" role="dialog">
+        <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Set Menu</h5>
@@ -99,12 +99,66 @@
                         </div>
 
                         <div class="form-group">
+                            <button class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#spllunch" aria-expanded="false" aria-controls="Set Special">
+                                Add Special
+                            </button>
+                            <div class="collapse mt-3" id="spllunch">
+                                <div class="card">
+                                    <div class="card-header">Special</div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <input type="text" name="lbsname" class="form-control" id="lunch-spl" aria-describedby="lunch special Menu" placeholder="Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="lbsdesc" class="form-control"  placeholder="Description">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="lbsprice" class="form-control" placeholder="Price">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lbs-veg" class="text-black-50 ml-1">Veg?</label>
+                                            <input type="checkbox" name="lbsveg" class="" id="lbs-veg" placeholder="Veg?">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
                             <label for="Dinner-buffet-veg" class="green-font">Dinner</label>
                             <input type="text" name="dbv" class="form-control" id="Dinner-buffet-veg" aria-describedby="Dinner Buffet Menu" placeholder="Veg">
                         </div>
                         <div class="form-group">
                             <input type="text" name="dbnv" class="form-control" id="Dinner-buffet-nonveg" aria-describedby="Dinner Buffet Menu" placeholder="Non-Veg">
                         </div>
+
+                        <div class="form-group">
+                            <button class="btn btn-outline-secondary" type="button" data-toggle="collapse" data-target="#spldinner" aria-expanded="false" aria-controls="Set Special">
+                                Add Special
+                            </button>
+                            <div class="collapse mt-3" id="spldinner">
+                                <div class="card">
+                                    <div class="card-header">Special</div>
+                                    <div class="card-body">
+                                        <div class="form-group">
+                                            <input type="text" name="dbsname" class="form-control" id="dinner-spl" aria-describedby="lunch special Menu" placeholder="Name">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="dbsdesc" class="form-control"  placeholder="Description">
+                                        </div>
+                                        <div class="form-group">
+                                            <input type="text" name="dbsprice" class="form-control" placeholder="Price">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="lbs-veg">Veg?</label>
+                                            <input type="checkbox" name="dbsveg" class="" id="dbs-veg" placeholder="Veg?">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
                         <small class="text-black-50">*Multiple items should be separated by commas(,)</small>
                     </form>
                 </div>
