@@ -15,19 +15,20 @@ $(document).ready(function() {
     }
 
     const db_ref = db.collection('Orders').doc(doc_name).collection('Orders');
-    db_ref.orderBy('orderId').onSnapshot(function(querySnapshot) {
+    db_ref.onSnapshot(function(querySnapshot) {
         var orders= [];
 
         querySnapshot.docChanges().forEach(function(change) {
             orders.push(change.doc.data());
-
             if(change.type === "added") {
-                document.getElementById('orders-wrapper').insertAdjacentHTML('beforeend', '<tr id="' + change.doc.data().desc + '' + change.doc.data().orderId + '">' +
+                document.getElementById('orders-wrapper').insertAdjacentHTML('beforeend', '<tr id="' + change.doc.data().name + '' + change.doc.data().userID + '">' +
                     '<th class="count"></th>' +
-                    '<th>' + change.doc.data().desc + '</th><th>' + change.doc.data().quantity + '</th><th>' + change.doc.data().orderId + '</th></tr>');
+                    '<th>' + change.doc.data().name + '</th><th>' + change.doc.data().quantity + '</th><th>' + change.doc.data().userID + '</th></tr>');
                 count=count+1;
+                if (count===1)
+                    document.getElementById('spin').remove();
             }else if (change.type === "removed") {
-                document.getElementById(change.doc.data().desc + '' + change.doc.data().orderId).remove();
+                document.getElementById(change.doc.data().name + '' + change.doc.data().userID).remove();
                 count=count-1;
             }
             reset_count();

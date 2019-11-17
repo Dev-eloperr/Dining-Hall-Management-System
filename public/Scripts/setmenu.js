@@ -1,22 +1,59 @@
 
 $(document).ready(function() {
-/*
-    $("#myModal").find('#spllunch').on('hidden', function (e) {
-        //e.preventDefault();
-        e.stopPropagation();
-        console.log('blocked propagation!');
-    });
 
- */
+
 
 
     console.log("set menu script running");
 
 
     const db=firebase.firestore();
-    db.settings({ timestampsInSnapshots: true });
 
 
+    $(function () {
+        $('[data-toggle="popover"]').popover();
+    });
+    var menu = [];
+    let b_menu;
+    $("#viewmenu").on('shown.bs.popover', function () {
+
+        b_menu = db.collection('Menu').doc('Breakfast').collection('Buffet').doc('Item');
+
+        b_menu.get().then(function(doc) {
+            $("#viewmenu").attr("data-content","<strong>Breakfast: </strong>"+doc.data().description.toString());
+        });
+        //console.log(menu);
+        b_menu = db.collection('Menu').doc('Lunch').collection('Buffet').doc('Veg');
+        b_menu.get().then(function(doc) {
+            $("#viewmenu").attr("data-content",$("#viewmenu").attr("data-content")+"<br><br>"+"<strong>Lunch(Veg) : </strong>"+doc.data().description.toString());
+        });
+        //console.log(menu);
+        b_menu = db.collection('Menu').doc('Lunch').collection('Buffet').doc('Non Veg');
+        b_menu.get().then(function(doc) {
+            $("#viewmenu").attr("data-content",$("#viewmenu").attr("data-content")+"<br><br>"+"<strong>Lunch(Non Veg) : </strong>"+doc.data().description.toString());
+        });
+        //console.log(menu);
+        b_menu = db.collection('Menu').doc('Lunch').collection('Buffet').doc('Special');
+        b_menu.get().then(function(doc) {
+            $("#viewmenu").attr("data-content",$("#viewmenu").attr("data-content")+"<br><br>"+"<strong>Special(Lunch) : </strong>"+doc.data().description.toString());
+        });
+        //console.log(menu);
+        b_menu = db.collection('Menu').doc('Dinner').collection('Buffet').doc('Veg');
+        b_menu.get().then(function(doc) {
+            $("#viewmenu").attr("data-content",$("#viewmenu").attr("data-content")+"<br><br>"+"<strong>Dinner(Veg) : </strong>"+doc.data().description.toString());
+        });
+        //console.log(menu);
+        b_menu = db.collection('Menu').doc('Dinner').collection('Buffet').doc('Non Veg');
+        b_menu.get().then(function(doc) {
+            $("#viewmenu").attr("data-content",$("#viewmenu").attr("data-content")+"<br><br>"+"<strong>Dinner(Non Veg) : </strong>"+doc.data().description.toString());
+        });
+        //console.log(menu);
+        b_menu = db.collection('Menu').doc('Dinner').collection('Buffet').doc('Special');
+        b_menu.get().then(function(doc) {
+            $("#viewmenu").attr("data-content",$("#viewmenu").attr("data-content")+"<br><br>"+"<strong>Special(Dinner) : </strong>"+doc.data().description.toString());
+        });
+
+    });
     //form submit
     const form1 = document.getElementById("myform");
     if (form1) {
