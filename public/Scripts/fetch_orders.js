@@ -15,7 +15,7 @@ $(document).ready(function() {
     }
 
     const db_ref = db.collection('Orders').doc(doc_name).collection('Orders');
-    db_ref.onSnapshot(function(querySnapshot) {
+    db_ref.orderBy('timeStamp').onSnapshot(function(querySnapshot) {
         var orders= [];
 
         querySnapshot.docChanges().forEach(function(change) {

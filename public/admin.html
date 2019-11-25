@@ -63,12 +63,13 @@
     <div>
         <!--span class="display-4">Insights</span-->
         <span class="float-left mt-3">
+            <button data-html="true" id="viewmenu" type="button" class="btn-m btn btn-outline-secondary" data-toggle="popover" title="Today's Menu" data-placement="top"
+                    data-content="">View Today's Menu</button>
+            <button class="btn-m btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#myModal">Set Today's Menu</button>
+
             <button class="btn btn-outline-success" disabled>View detailed insights</button>
              <button class="btn btn-outline-success" disabled>Edit Items</button>
-             <button data-html="true" id="viewmenu" type="button" class="btn-m btn btn-outline-secondary" data-toggle="popover" title="Today's Menu" data-placement="top"
-                     data-content="">View Today's Menu</button>
-            <button class="btn-m btn btn-outline-secondary" type="button" data-toggle="modal" data-target="#myModal">Set Today's Menu</button>
-        </span>
+             </span>
     </div>
     <div>
         <img src="images/graph.jpg" class="img-fluid mt-3">
@@ -77,7 +78,7 @@
 
     <!-- Modal -->
     <div id="myModal" class=" modal fade" role="dialog">
-        <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-dialog " role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title">Set Menu</h5>
